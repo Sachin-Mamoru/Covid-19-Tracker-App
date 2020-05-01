@@ -15,6 +15,10 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.deepPurple,
+          buttonTheme: ButtonThemeData(
+            buttonColor: Colors.deepPurple,
+            textTheme: ButtonTextTheme.primary,
+          ),
         ),
         debugShowCheckedModeBanner: false,
         home: MyHomePage(),
@@ -38,15 +42,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  DecorationImage _buildbackgroundButton() {
-    return DecorationImage(
-      fit: BoxFit.fill,
-      colorFilter:
-          ColorFilter.mode(Colors.black.withOpacity(1), BlendMode.dstATop),
-      image: AssetImage('assets/images/get-start.png'),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,11 +57,16 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Container(
-                  padding: new EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 30.0),
-                  height: 250.0,
-                  width: 400.0,
-                  child: new Image.asset('assets/images/logo.png'),
+                Stack(
+                  alignment: Alignment.topCenter,
+                  children: <Widget>[
+                    Image(
+                      image: new AssetImage('assets/images/logo.png'),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 100.0,
                 ),
                 Stack(
                   alignment: Alignment.bottomCenter,
@@ -75,8 +75,15 @@ class _MyHomePageState extends State<MyHomePage> {
                       image: new AssetImage('assets/images/get-start.png'),
                     ),
                     Positioned(
-                      top: 115.0,
+                      top: 110.0,
                       child: RaisedButton(
+                        padding: EdgeInsets.all(15.0),
+                        child: Text(
+                          'Get Started',
+                          style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.bold, fontSize: 20.0),
+                        ),
                         onPressed: () {},
                       ),
                     )
