@@ -1,3 +1,4 @@
+import 'package:covid_19_tracker/pages/dashboard/dashboard.dart';
 import 'package:covid_19_tracker/services/covid19_data.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -20,6 +21,9 @@ class MyApp extends StatelessWidget {
             textTheme: ButtonTextTheme.primary,
           ),
         ),
+        routes: <String, WidgetBuilder>{
+          '/dashboard': (BuildContext context) => new DashboardPage(),
+        },
         debugShowCheckedModeBanner: false,
         home: MyHomePage(),
       ),
@@ -45,54 +49,59 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          image: _buildbackgroundImage(),
-        ),
-        padding: EdgeInsets.all(10.0),
-        child: SingleChildScrollView(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Stack(
-                  alignment: Alignment.topCenter,
-                  children: <Widget>[
-                    Image(
-                      image: new AssetImage('assets/images/logo.png'),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 100.0,
-                ),
-                Stack(
-                  alignment: Alignment.bottomCenter,
-                  children: <Widget>[
-                    Image(
-                      image: new AssetImage('assets/images/get-start.png'),
-                    ),
-                    Positioned(
-                      top: 110.0,
-                      child: RaisedButton(
-                        padding: EdgeInsets.all(15.0),
-                        child: Text(
-                          'Get Started',
-                          style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.bold, fontSize: 20.0),
-                        ),
-                        onPressed: () {},
+      body: SafeArea(
+        child: Container(
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            image: _buildbackgroundImage(),
+          ),
+          padding: EdgeInsets.all(10.0),
+          child: SingleChildScrollView(
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Stack(
+                    alignment: Alignment.topCenter,
+                    children: <Widget>[
+                      Image(
+                        image: new AssetImage('assets/images/logo.png'),
                       ),
-                    )
-                  ],
-                )
-                // _langSelectEnglish(settings),
-                // _langSelectSinhala(settings),
-                // _langSelectTamil(settings),
-              ],
+                    ],
+                  ),
+                  SizedBox(
+                    height: 100.0,
+                  ),
+                  Stack(
+                    alignment: Alignment.bottomCenter,
+                    children: <Widget>[
+                      Image(
+                        image: new AssetImage('assets/images/get-start.png'),
+                      ),
+                      Positioned(
+                        top: 110.0,
+                        child: RaisedButton(
+                          padding: EdgeInsets.all(15.0),
+                          child: Text(
+                            'Get Started',
+                            style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20.0),
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => DashboardPage()));
+                          },
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ),
