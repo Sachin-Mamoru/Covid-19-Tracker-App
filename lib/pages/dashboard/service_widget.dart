@@ -13,17 +13,15 @@ class ServiceWidget {
         children: <Widget>[
           Align(
             alignment: Alignment.bottomCenter,
-            child: Material(
-              elevation: 5,
-              borderRadius: BorderRadius.circular(16),
-              color: Colors.white,
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => PreventionPage()));
-                },
+            child: new GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => PreventionPage()));
+              },
+              child: Material(
+                elevation: 5,
+                borderRadius: BorderRadius.circular(16),
+                color: Colors.white,
                 child: Container(
                   height: 156,
                   width: 134,
