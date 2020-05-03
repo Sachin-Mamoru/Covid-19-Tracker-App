@@ -1,4 +1,5 @@
 import 'package:covid_19_tracker/pages/dashboard/dashboard.dart';
+import 'package:covid_19_tracker/pages/prevention_page/prevention_page.dart';
 import 'package:covid_19_tracker/services/covid19_data.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         ),
         routes: <String, WidgetBuilder>{
           '/dashboard': (BuildContext context) => new DashboardPage(),
+          '/prevention': (BuildContext context) => new PreventionPage(),
         },
         debugShowCheckedModeBanner: false,
         home: MyHomePage(),
