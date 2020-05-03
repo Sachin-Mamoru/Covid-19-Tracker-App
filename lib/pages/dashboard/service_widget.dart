@@ -1,3 +1,4 @@
+import 'package:covid_19_tracker/pages/prevention_page/prevention_page.dart';
 import 'package:flutter/material.dart';
 
 class ServiceWidget {
@@ -16,19 +17,27 @@ class ServiceWidget {
               elevation: 5,
               borderRadius: BorderRadius.circular(16),
               color: Colors.white,
-              child: Container(
-                height: 156,
-                width: 134,
-                padding: EdgeInsets.all(16),
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Text(
-                    name,
-                    style: TextStyle(
-                        color: textColor,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 24.0),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PreventionPage()));
+                },
+                child: Container(
+                  height: 156,
+                  width: 134,
+                  padding: EdgeInsets.all(16),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Text(
+                      name,
+                      style: TextStyle(
+                          color: textColor,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 24.0),
+                    ),
                   ),
                 ),
               ),
