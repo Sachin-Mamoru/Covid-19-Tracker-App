@@ -1,8 +1,10 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:covid_19_tracker/pages/prevention_page/prevention_page.dart';
 import 'package:flutter/material.dart';
 
 class ServiceWidget {
-  static Widget serviceWidget(name, textColor, backgroundColor, img, context) {
+  static Widget serviceWidget(
+      name, mxLines, textColor, backgroundColor, img, context) {
     return Container(
       margin: EdgeInsets.all(13.0),
       height: 170,
@@ -25,16 +27,17 @@ class ServiceWidget {
                 child: Container(
                   height: 156,
                   width: 134,
-                  padding: EdgeInsets.all(16),
+                  padding: EdgeInsets.fromLTRB(16, 16, 16, 23),
                   child: Align(
                     alignment: Alignment.bottomCenter,
-                    child: Text(
+                    child: AutoSizeText(
                       name,
                       style: TextStyle(
                           color: textColor,
                           fontFamily: 'Poppins',
                           fontWeight: FontWeight.w600,
                           fontSize: 24.0),
+                      maxLines: mxLines,
                     ),
                   ),
                 ),

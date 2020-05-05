@@ -25,13 +25,15 @@ class _DashboardPageState extends State<DashboardPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       ServiceWidget.serviceWidget(
-                          'name',
-                          Colors.blueGrey,
-                          Colors.purple,
-                          'assets/images/background-start.jpg',
+                          'Symptoms',
+                          1,
+                          Colors.blueAccent,
+                          Colors.blueAccent,
+                          'assets/images/symptoms-logo.png',
                           context),
                       ServiceWidget.serviceWidget(
                           'name',
+                          1,
                           Colors.blueGrey,
                           Colors.purple,
                           'assets/images/background-start.jpg',
@@ -43,12 +45,14 @@ class _DashboardPageState extends State<DashboardPage> {
                     children: <Widget>[
                       ServiceWidget.serviceWidget(
                           'name',
+                          1,
                           Colors.blueGrey,
                           Colors.purple,
                           'assets/images/background-start.jpg',
                           context),
                       ServiceWidget.serviceWidget(
                           'name',
+                          1,
                           Colors.blueGrey,
                           Colors.purple,
                           'assets/images/background-start.jpg',
@@ -60,12 +64,14 @@ class _DashboardPageState extends State<DashboardPage> {
                     children: <Widget>[
                       ServiceWidget.serviceWidget(
                           'name',
+                          1,
                           Colors.blueGrey,
                           Colors.purple,
                           'assets/images/background-start.jpg',
                           context),
                       ServiceWidget.serviceWidget(
                           'name',
+                          1,
                           Colors.blueGrey,
                           Colors.purple,
                           'assets/images/background-start.jpg',

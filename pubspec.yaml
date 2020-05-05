@@ -30,13 +30,11 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -47,6 +45,8 @@ flutter:
     - assets/images/background-start.jpg
     - assets/images/logo.png
     - assets/images/get-start.png
+    - assets/images/symptoms-logo.png
+    - assets/images/prevention-logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
