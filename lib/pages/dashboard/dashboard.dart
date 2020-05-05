@@ -1,6 +1,6 @@
+import 'package:covid_19_tracker/pages/dashboard/cases_pie_chart.dart';
 import 'package:covid_19_tracker/pages/dashboard/service_widget.dart';
 import 'package:covid_19_tracker/pages/dashboard/world_cases_widget.dart';
-import 'package:pie_chart/pie_chart.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -20,6 +20,7 @@ class _DashboardPageState extends State<DashboardPage> {
           child: Column(
             children: <Widget>[
               WorldCasesWidget.worldCasesWidget(),
+              CasesPieChart.casesPieChart(),
               Column(
                 children: <Widget>[
                   Row(

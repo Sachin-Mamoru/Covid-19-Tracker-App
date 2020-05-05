@@ -13,7 +13,7 @@ class PreventCard {
           padding: EdgeInsets.all(8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               ClipRRect(
                 borderRadius: BorderRadius.circular(12),
@@ -24,7 +24,7 @@ class PreventCard {
                   fit: BoxFit.fitWidth,
                 ),
               ),
-              SizedBox(width: 12),
+              SizedBox(width: 18),
               Flexible(
                 child: Text(title,
                     style: TextStyle(
