@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class ServiceWidget {
   static Widget serviceWidget(
-      name, mxLines, bM, textColor, backgroundColor, img, context) {
+      name, mxLines, bM, textColor, backgroundColor, img, context, page) {
     return Container(
       margin: EdgeInsets.all(13.0),
       height: 170,
@@ -17,8 +17,8 @@ class ServiceWidget {
             alignment: Alignment.bottomCenter,
             child: new GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => PreventionPage()));
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => page));
               },
               child: Material(
                 elevation: 5,

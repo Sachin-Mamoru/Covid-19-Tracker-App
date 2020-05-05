@@ -1,5 +1,7 @@
+import 'package:covid_19_tracker/pages/affected_countries_page/affected_countries_page.dart';
 import 'package:covid_19_tracker/pages/dashboard/dashboard.dart';
 import 'package:covid_19_tracker/pages/prevention_page/prevention_page.dart';
+import 'package:covid_19_tracker/pages/symptoms_page/symptoms_page.dart';
 import 'package:covid_19_tracker/services/covid19_data.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -25,6 +27,9 @@ class MyApp extends StatelessWidget {
         routes: <String, WidgetBuilder>{
           '/dashboard': (BuildContext context) => new DashboardPage(),
           '/prevention': (BuildContext context) => new PreventionPage(),
+          '/symptoms': (BuildContext context) => new SymptomsPage(),
+          '/affectedCountries': (BuildContext context) =>
+              new AffectedCountriesPage(),
         },
         debugShowCheckedModeBanner: false,
         home: MyHomePage(),
