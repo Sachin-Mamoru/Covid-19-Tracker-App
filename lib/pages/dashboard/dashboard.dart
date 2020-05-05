@@ -32,11 +32,11 @@ class _DashboardPageState extends State<DashboardPage> {
                           'assets/images/symptoms-logo.png',
                           context),
                       ServiceWidget.serviceWidget(
-                          'name',
+                          'Prevention',
                           1,
-                          Colors.blueGrey,
-                          Colors.purple,
-                          'assets/images/background-start.jpg',
+                          Colors.green,
+                          Colors.green,
+                          'assets/images/prevention-logo.png',
                           context)
                     ],
                   ),
