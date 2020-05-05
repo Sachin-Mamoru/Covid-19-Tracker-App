@@ -25,13 +25,16 @@ class ServiceWidget {
                 borderRadius: BorderRadius.circular(16),
                 color: Colors.white,
                 child: Container(
+                  margin: EdgeInsets.only(bottom: 5.0),
                   height: 156,
-                  width: 134,
-                  padding: EdgeInsets.fromLTRB(16, 16, 16, 23),
+                  width: 138,
+                  padding: EdgeInsets.all(16.0),
                   child: Align(
                     alignment: Alignment.bottomCenter,
                     child: AutoSizeText(
                       name,
+                      maxFontSize: 19.0,
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                           color: textColor,
                           fontFamily: 'Poppins',

@@ -44,11 +44,11 @@ class _DashboardPageState extends State<DashboardPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       ServiceWidget.serviceWidget(
-                          'name',
-                          1,
+                          'Affected Countries',
+                          2,
                           Colors.blueGrey,
-                          Colors.purple,
-                          'assets/images/background-start.jpg',
+                          Colors.blueGrey,
+                          'assets/images/mostAffectCountry-logo.png',
                           context),
                       ServiceWidget.serviceWidget(
                           'name',

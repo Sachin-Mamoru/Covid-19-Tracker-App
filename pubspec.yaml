@@ -47,6 +47,7 @@ flutter:
     - assets/images/get-start.png
     - assets/images/symptoms-logo.png
     - assets/images/prevention-logo.png
+    - assets/images/mostAffectCountry-logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
