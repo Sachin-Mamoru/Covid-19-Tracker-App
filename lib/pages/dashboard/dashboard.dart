@@ -27,6 +27,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       ServiceWidget.serviceWidget(
                           'Symptoms',
                           1,
+                          8.0,
                           Colors.blueAccent,
                           Colors.blueAccent,
                           'assets/images/symptoms-logo.png',
@@ -34,6 +35,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       ServiceWidget.serviceWidget(
                           'Prevention',
                           1,
+                          8.0,
                           Colors.green,
                           Colors.green,
                           'assets/images/prevention-logo.png',
@@ -46,6 +48,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       ServiceWidget.serviceWidget(
                           'Affected Countries',
                           2,
+                          3.0,
                           Colors.blueGrey,
                           Colors.blueGrey,
                           'assets/images/mostAffectCountry-logo.png',
@@ -53,6 +56,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       ServiceWidget.serviceWidget(
                           'name',
                           1,
+                          5.0,
                           Colors.blueGrey,
                           Colors.purple,
                           'assets/images/background-start.jpg',
@@ -65,6 +69,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       ServiceWidget.serviceWidget(
                           'name',
                           1,
+                          5.0,
                           Colors.blueGrey,
                           Colors.purple,
                           'assets/images/background-start.jpg',
@@ -72,6 +77,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       ServiceWidget.serviceWidget(
                           'name',
                           1,
+                          5.0,
                           Colors.blueGrey,
                           Colors.purple,
                           'assets/images/background-start.jpg',
