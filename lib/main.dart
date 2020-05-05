@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
       fit: BoxFit.cover,
       colorFilter:
           ColorFilter.mode(Colors.black.withOpacity(0.8), BlendMode.dstATop),
-      image: AssetImage('assets/images/background-start.jpg'),
+      image: AssetImage('assets/images/Cover/background-start.jpg'),
     );
   }
 
@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     alignment: Alignment.topCenter,
                     children: <Widget>[
                       Image(
-                        image: new AssetImage('assets/images/logo.png'),
+                        image: new AssetImage('assets/images/Cover/logo.png'),
                       ),
                     ],
                   ),
@@ -79,7 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     alignment: Alignment.bottomCenter,
                     children: <Widget>[
                       Image(
-                        image: new AssetImage('assets/images/get-start.png'),
+                        image:
+                            new AssetImage('assets/images/Cover/get-start.png'),
                       ),
                       Positioned(
                         top: 110.0,

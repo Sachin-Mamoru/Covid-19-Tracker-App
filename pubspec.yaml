@@ -25,6 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   provider:
   auto_size_text:
+  pie_chart:
 
 dev_dependencies:
   flutter_test:
@@ -42,12 +43,15 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/background-start.jpg
-    - assets/images/logo.png
-    - assets/images/get-start.png
-    - assets/images/symptoms-logo.png
-    - assets/images/prevention-logo.png
-    - assets/images/mostAffectCountry-logo.png
+    - assets/images/Cover/background-start.jpg
+    - assets/images/Cover/logo.png
+    - assets/images/Cover/get-start.png
+    - assets/images/Dashboard/symptoms-logo.png
+    - assets/images/Dashboard/prevention-logo.png
+    - assets/images/Dashboard/mostAffectCountry-logo.png
+    - assets/images/Dashboard/faqs-logo.jpg
+    - assets/images/Dashboard/worldWide-logo.png
+    - assets/images/Dashboard/donation-logo.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

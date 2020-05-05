@@ -1,5 +1,6 @@
 import 'package:covid_19_tracker/pages/dashboard/service_widget.dart';
 import 'package:covid_19_tracker/pages/dashboard/world_cases_widget.dart';
+import 'package:pie_chart/pie_chart.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -30,7 +31,7 @@ class _DashboardPageState extends State<DashboardPage> {
                           8.0,
                           Colors.blueAccent,
                           Colors.blueAccent,
-                          'assets/images/symptoms-logo.png',
+                          'assets/images/Dashboard/symptoms-logo.png',
                           context),
                       ServiceWidget.serviceWidget(
                           'Prevention',
@@ -38,7 +39,7 @@ class _DashboardPageState extends State<DashboardPage> {
                           8.0,
                           Colors.green,
                           Colors.green,
-                          'assets/images/prevention-logo.png',
+                          'assets/images/Dashboard/prevention-logo.png',
                           context)
                     ],
                   ),
@@ -51,15 +52,15 @@ class _DashboardPageState extends State<DashboardPage> {
                           3.0,
                           Colors.blueGrey,
                           Colors.blueGrey,
-                          'assets/images/mostAffectCountry-logo.png',
+                          'assets/images/Dashboard/mostAffectCountry-logo.png',
                           context),
                       ServiceWidget.serviceWidget(
-                          'name',
+                          'Faqs',
                           1,
                           5.0,
-                          Colors.blueGrey,
-                          Colors.purple,
-                          'assets/images/background-start.jpg',
+                          Colors.black,
+                          Colors.white30,
+                          'assets/images/Dashboard/faqs-logo.jpg',
                           context)
                     ],
                   ),
@@ -67,20 +68,20 @@ class _DashboardPageState extends State<DashboardPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       ServiceWidget.serviceWidget(
-                          'name',
+                          'Worldwide',
                           1,
-                          5.0,
-                          Colors.blueGrey,
-                          Colors.purple,
-                          'assets/images/background-start.jpg',
+                          8.0,
+                          Colors.teal,
+                          Colors.white,
+                          'assets/images/Dashboard/worldWide-logo.png',
                           context),
                       ServiceWidget.serviceWidget(
-                          'name',
+                          'Donation',
                           1,
-                          5.0,
-                          Colors.blueGrey,
-                          Colors.purple,
-                          'assets/images/background-start.jpg',
+                          8.0,
+                          Colors.indigoAccent,
+                          Colors.white60,
+                          'assets/images/Dashboard/donation-logo.jpg',
                           context)
                     ],
                   ),
