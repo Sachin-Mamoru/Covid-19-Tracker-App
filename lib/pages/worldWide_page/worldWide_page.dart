@@ -1,6 +1,8 @@
+import 'dart:convert';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:covid_19_tracker/pages/worldWide_page/search_country.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class WorldWidePage extends StatefulWidget {
   @override
@@ -8,16 +10,21 @@ class WorldWidePage extends StatefulWidget {
 }
 
 class _WorldWidePageState extends State<WorldWidePage> {
-  List countryData = [];
+  List countryData;
 
-  // fetchCountryData() async {
+  fetchCountryData() async {
+    http.Response response =
+        await http.get('https://corona.lmao.ninja/v2/countries');
+    setState(() {
+      countryData = json.decode(response.body);
+    });
+  }
 
-  //   http.Response response =
-  //       await http.get('https://corona.lmao.ninja/v2/countries');
-  //   setState(() {
-  //     countryData = json.decode(response.body);
-  //   });
-  // }
+  @override
+  void initState() {
+    fetchCountryData();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +39,9 @@ class _WorldWidePageState extends State<WorldWidePage> {
             },
           )
         ],
-        title: Text('Country Stats'),
+        title: Text('Worldwide Data'),
       ),
-      body: 1 == 0 //countryData == null
+      body: countryData == null
           ? Center(
               child: CircularProgressIndicator(),
             )
@@ -125,7 +132,7 @@ class _WorldWidePageState extends State<WorldWidePage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             AutoSizeText(
-                              'country name',
+                              countryData[index]['country'],
                               maxLines: 2,
                               style: TextStyle(
                                   color: Colors.blue,
@@ -224,9 +231,8 @@ class _WorldWidePageState extends State<WorldWidePage> {
                         borderRadius: BorderRadius.circular(20.0),
                         child: FadeInImage.assetNetwork(
                           width: 120.0,
-                          placeholder:
-                              'assets/images/Cover/background-start.jpg',
-                          image: 'assets/images/Cover/background-start.jpg',
+                          placeholder: 'assets/images/loader.gif',
+                          image: countryData[index]['countryInfo']['flag'],
                           fadeInCurve: Curves.bounceIn,
                           fit: BoxFit.cover,
                         ),

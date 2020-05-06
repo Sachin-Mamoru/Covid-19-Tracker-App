@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class WorldCasesWidget {
-  static Widget worldCasesWidget() {
+  static Widget worldCasesWidget(worldData) {
     return Container(
       margin: EdgeInsets.all(10.0),
       padding: EdgeInsets.all(20),
@@ -22,17 +22,17 @@ class WorldCasesWidget {
         children: <Widget>[
           caseResults(
             Colors.brown,
-            104645454454,
+            worldData['cases'].toString(),
             "Infected",
           ),
           caseResults(
             Colors.redAccent,
-            87543543,
+            worldData['deaths'].toString(),
             "Deaths",
           ),
           caseResults(
             Colors.green,
-            4654345345,
+            worldData['recovered'].toString(),
             "Recovered",
           ),
         ],

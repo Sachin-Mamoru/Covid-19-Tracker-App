@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
 
 class CasesPieChart {
-  static Widget casesPieChart() {
+  static Widget casesPieChart(worldData) {
     return Container(
       margin: EdgeInsets.only(top: .0, left: 10.0, right: 10.0, bottom: 10.0),
       padding: EdgeInsets.all(20),
@@ -19,10 +19,10 @@ class CasesPieChart {
       ),
       child: PieChart(
         dataMap: {
-          'Infected': 13421,
-          'Deaths': 3554,
-          'Recovered': 3423,
-          'Active': 2334
+          'Infected': worldData['cases'].toDouble(),
+          'Deaths': worldData['deaths'].toDouble(),
+          'Recovered': worldData['recovered'].toDouble(),
+          'Active': worldData['active'].toDouble()
         },
         colorList: [
           Colors.brown,
