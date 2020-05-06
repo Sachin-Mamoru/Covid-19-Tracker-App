@@ -1,7 +1,9 @@
 import 'package:covid_19_tracker/pages/affected_countries_page/affected_countries_page.dart';
 import 'package:covid_19_tracker/pages/dashboard/dashboard.dart';
+import 'package:covid_19_tracker/pages/faqs_page/faqs_page.dart';
 import 'package:covid_19_tracker/pages/prevention_page/prevention_page.dart';
 import 'package:covid_19_tracker/pages/symptoms_page/symptoms_page.dart';
+import 'package:covid_19_tracker/pages/worldWide_page/worldWide_page.dart';
 import 'package:covid_19_tracker/services/covid19_data.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -30,6 +32,8 @@ class MyApp extends StatelessWidget {
           '/symptoms': (BuildContext context) => new SymptomsPage(),
           '/affectedCountries': (BuildContext context) =>
               new AffectedCountriesPage(),
+          '/worldWide': (BuildContext context) => new WorldWidePage(),
+          '/faqs': (BuildContext context) => new FaqsPage(),
         },
         debugShowCheckedModeBanner: false,
         home: MyHomePage(),

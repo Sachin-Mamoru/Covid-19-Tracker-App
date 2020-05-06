@@ -38,6 +38,8 @@ class _AffectedCountriesPageState extends State<AffectedCountriesPage> {
                     'Write to us :',
                     style: TextStyle(color: Colors.orange),
                   ),
+                  Text('help@gmail.com'),
+                  Text('help@gmail.com'),
                   Text('help@gmail.com')
                 ],
               ),

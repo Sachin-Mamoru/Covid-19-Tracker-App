@@ -2,8 +2,10 @@ import 'package:covid_19_tracker/pages/affected_countries_page/affected_countrie
 import 'package:covid_19_tracker/pages/dashboard/widget/cases_pie_chart.dart';
 import 'package:covid_19_tracker/pages/dashboard/widget/service_widget.dart';
 import 'package:covid_19_tracker/pages/dashboard/widget/world_cases_widget.dart';
+import 'package:covid_19_tracker/pages/faqs_page/faqs_page.dart';
 import 'package:covid_19_tracker/pages/prevention_page/prevention_page.dart';
 import 'package:covid_19_tracker/pages/symptoms_page/symptoms_page.dart';
+import 'package:covid_19_tracker/pages/worldWide_page/worldWide_page.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -65,14 +67,14 @@ class _DashboardPageState extends State<DashboardPage> {
                         AffectedCountriesPage(),
                       ),
                       ServiceWidget.serviceWidget(
-                        'Faqs',
+                        'FAQs',
                         1,
                         5.0,
                         Colors.black,
                         Colors.white30,
                         'assets/images/Dashboard/faqs-logo.jpg',
                         context,
-                        PreventionPage(),
+                        FaqsPage(),
                       )
                     ],
                   ),
@@ -87,7 +89,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         Colors.white,
                         'assets/images/Dashboard/worldWide-logo.png',
                         context,
-                        PreventionPage(),
+                        WorldWidePage(),
                       ),
                       ServiceWidget.serviceWidget(
                         'Donation',

@@ -1,5 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:covid_19_tracker/pages/prevention_page/prevention_page.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 
 class ServiceWidget {
@@ -17,8 +17,12 @@ class ServiceWidget {
             alignment: Alignment.bottomCenter,
             child: new GestureDetector(
               onTap: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => page));
+                if (name == 'Donation') {
+                  launch('https://covid19responsefund.org/');
+                } else {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => page));
+                }
               },
               child: Material(
                 elevation: 5,
