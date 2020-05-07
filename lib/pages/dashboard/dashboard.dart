@@ -8,9 +8,7 @@ import 'package:covid_19_tracker/pages/faqs_page/faqs_page.dart';
 import 'package:covid_19_tracker/pages/prevention_page/prevention_page.dart';
 import 'package:covid_19_tracker/pages/symptoms_page/symptoms_page.dart';
 import 'package:covid_19_tracker/pages/worldWide_page/worldWide_page.dart';
-import 'package:covid_19_tracker/services/covid19_data.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 
 class DashboardPage extends StatefulWidget {
@@ -39,8 +37,6 @@ class _DashboardPageState extends State<DashboardPage> {
 
   @override
   Widget build(BuildContext context) {
-    // Covid19Data fetchData = Provider.of<Covid19Data>(context);
-
     return Scaffold(
       appBar: AppBar(
         title: Text('COVID-19 TRACKER'),

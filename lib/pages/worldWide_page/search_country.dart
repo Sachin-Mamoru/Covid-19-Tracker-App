@@ -37,8 +37,10 @@ class SearchCountry extends SearchDelegate {
     final suggestionList = query.isEmpty
         ? countryList
         : countryList
-            .where((element) =>
-                element['country'].toString().toLowerCase().startsWith(query))
+            .where((element) => element['country']
+                .toString()
+                .toLowerCase()
+                .startsWith(query.toLowerCase()))
             .toList();
 
     return ListView.builder(
