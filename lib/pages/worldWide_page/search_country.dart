@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class SearchCountry extends SearchDelegate {
@@ -33,79 +34,86 @@ class SearchCountry extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    // final suggestionList = query.isEmpty
-    //     ? countryList
-    //     : countryList
-    //         .where((element) =>
-    //             element['country'].toString().toLowerCase().startsWith(query))
-    //         .toList();
+    final suggestionList = query.isEmpty
+        ? countryList
+        : countryList
+            .where((element) =>
+                element['country'].toString().toLowerCase().startsWith(query))
+            .toList();
 
     return ListView.builder(
-        itemCount: 5, //suggestionList.length,
+        itemCount: suggestionList.length,
         itemBuilder: (context, index) {
-          return Card(
-            child: Container(
-              height: 130,
-              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-              child: Row(
-                children: <Widget>[
-                  Container(
-                    width: 200,
-                    margin: EdgeInsets.symmetric(horizontal: 10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'country name', //suggestionList[index]['country'],
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        Image.network(
-                          'assets/images/Cover/background-start.jpg', //suggestionList[index]['countryInfo']['flag'],
-                          height: 50,
-                          width: 60,
-                        ),
-                      ],
-                    ),
+          return new Stack(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.fromLTRB(40.0, 2.0, 20.0, 2.0),
+                height: 140.0,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(118.0, 6.0, 20.0, 10.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      AutoSizeText(
+                        suggestionList[index]['country'],
+                        maxFontSize: 30.0,
+                        maxLines: 1,
+                        style: TextStyle(
+                            color: Colors.teal,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w600,
+                            fontSize: 26.0),
+                      ),
+                      AutoSizeText(
+                        'Infected:' + suggestionList[index]['cases'].toString(),
+                        style: TextStyle(color: Colors.brown, fontSize: 16.0),
+                        maxLines: 1,
+                      ),
+                      AutoSizeText(
+                        'Active : ' +
+                            suggestionList[index]['active'].toString(),
+                        style: TextStyle(color: Colors.indigo, fontSize: 16.0),
+                        maxLines: 1,
+                      ),
+                      AutoSizeText(
+                        'Deaths : ' +
+                            suggestionList[index]['deaths'].toString(),
+                        style:
+                            TextStyle(color: Colors.redAccent, fontSize: 16.0),
+                        maxLines: 1,
+                      ),
+                      AutoSizeText(
+                        'Recovered : ' +
+                            suggestionList[index]['recovered'].toString(),
+                        style: TextStyle(color: Colors.green, fontSize: 16.0),
+                        maxLines: 1,
+                      ),
+                    ],
                   ),
-                  Expanded(
-                      child: Container(
-                    child: Column(
-                      children: <Widget>[
-                        Text(
-                          'CONFIRMED:' +
-                              '3244', //suggestionList[index]['cases'].toString(),
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.red),
-                        ),
-                        Text(
-                          'ACTIVE:' +
-                              '234', //suggestionList[index]['active'].toString(),
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.blue),
-                        ),
-                        Text(
-                          'RECOVERED:' +
-                              '324', //suggestionList[index]['recovered'].toString(),
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.green),
-                        ),
-                        Text(
-                          'DEATHS:' +
-                              '244', //suggestionList[index]['deaths'].toString(),
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Theme.of(context).brightness ==
-                                      Brightness.dark
-                                  ? Colors.grey[100]
-                                  : Colors.grey[900]),
-                        ),
-                      ],
-                    ),
-                  ))
-                ],
+                ),
               ),
-            ),
+              Positioned(
+                left: 15.0,
+                top: 15.0,
+                bottom: 15.0,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20.0),
+                  child: FadeInImage.assetNetwork(
+                    width: 120.0,
+                    placeholder: 'assets/images/WorldWide_Page/loader.gif',
+                    image: suggestionList[index]['countryInfo']['flag'],
+                    fadeInCurve: Curves.bounceIn,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ],
           );
         });
   }

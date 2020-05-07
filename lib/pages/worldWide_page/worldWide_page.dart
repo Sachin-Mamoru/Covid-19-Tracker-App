@@ -34,8 +34,9 @@ class _WorldWidePageState extends State<WorldWidePage> {
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () {
-              showSearch(
-                  context: context, delegate: SearchCountry(countryData));
+              if (countryData != null)
+                showSearch(
+                    context: context, delegate: SearchCountry(countryData));
             },
           )
         ],
@@ -47,74 +48,6 @@ class _WorldWidePageState extends State<WorldWidePage> {
             )
           : ListView.builder(
               itemBuilder: (context, index) {
-                // return Card(
-                //   child: Container(
-                //     height: 130,
-                //     margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                //     child: Row(
-                //       children: <Widget>[
-                //         Container(
-                //           width: 200,
-                //           margin: EdgeInsets.symmetric(horizontal: 10),
-                //           child: Column(
-                //             crossAxisAlignment: CrossAxisAlignment.start,
-                //             mainAxisAlignment: MainAxisAlignment.center,
-                //             children: <Widget>[
-                //               Text(
-                //                 'country name', //countryData[index]['country'],
-                //                 style: TextStyle(fontWeight: FontWeight.bold),
-                //               ),
-                //               Image.network(
-                //                 //countryData[index]['countryInfo']['flag'],
-                //                 'assets/images/Cover/background-start.jpg',
-                //                 height: 50,
-                //                 width: 60,
-                //               ),
-                //             ],
-                //           ),
-                //         ),
-                //         Expanded(
-                //             child: Container(
-                //           child: Column(
-                //             children: <Widget>[
-                //               Text(
-                //                 'CONFIRMED:' +
-                //                     '32312', //countryData[index]['cases'].toString(),
-                //                 style: TextStyle(
-                //                     fontWeight: FontWeight.bold,
-                //                     color: Colors.red),
-                //               ),
-                //               Text(
-                //                 'ACTIVE:' +
-                //                     '42344', //countryData[index]['active'].toString(),
-                //                 style: TextStyle(
-                //                     fontWeight: FontWeight.bold,
-                //                     color: Colors.blue),
-                //               ),
-                //               Text(
-                //                 'RECOVERED:' +
-                //                     '234', //countryData[index]['recovered'].toString(),
-                //                 style: TextStyle(
-                //                     fontWeight: FontWeight.bold,
-                //                     color: Colors.green),
-                //               ),
-                //               Text(
-                //                 'DEATHS:' +
-                //                     '2343', //countryData[index]['deaths'].toString(),
-                //                 style: TextStyle(
-                //                     fontWeight: FontWeight.bold,
-                //                     color: Theme.of(context).brightness ==
-                //                             Brightness.dark
-                //                         ? Colors.grey[100]
-                //                         : Colors.grey[900]),
-                //               ),
-                //             ],
-                //           ),
-                //         ))
-                //       ],
-                //     ),
-                //   ),
-                // );
                 return new Stack(
                   children: <Widget>[
                     Container(
@@ -126,98 +59,48 @@ class _WorldWidePageState extends State<WorldWidePage> {
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.fromLTRB(100.0, 20.0, 20.0, 20.0),
+                        padding: EdgeInsets.fromLTRB(118.0, 6.0, 20.0, 10.0),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             AutoSizeText(
                               countryData[index]['country'],
-                              maxLines: 2,
+                              maxFontSize: 30.0,
+                              maxLines: 1,
                               style: TextStyle(
-                                  color: Colors.blue,
+                                  color: Colors.teal,
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 24.0),
+                                  fontSize: 26.0),
                             ),
                             AutoSizeText(
-                              'deaths - 3243',
-                              style: TextStyle(color: Colors.grey),
+                              'Infected:' +
+                                  countryData[index]['cases'].toString(),
+                              style: TextStyle(
+                                  color: Colors.brown, fontSize: 16.0),
                               maxLines: 1,
                             ),
-                            // Divider(),
-                            // Expanded(
-                            //   flex: 1,
-                            //   child: Row(
-                            //     children: <Widget>[
-                            //       Flexible(
-                            //         flex: 1,
-                            //         child: Container(
-                            //           padding: EdgeInsets.all(5.0),
-                            //           width: 70.0,
-                            //           decoration: BoxDecoration(
-                            //             color: Theme.of(context).accentColor,
-                            //             borderRadius:
-                            //                 BorderRadius.circular(10.0),
-                            //           ),
-                            //           alignment: Alignment.center,
-                            //           child: AutoSizeText(
-                            //             'infected - 9234',
-                            //             maxLines: 1,
-                            //           ),
-                            //         ),
-                            //       ),
-                            //       SizedBox(width: 15.0),
-                            //       Flexible(
-                            //         flex: 1,
-                            //         child: Container(
-                            //           padding: EdgeInsets.all(4.0),
-                            //           width: 70.0,
-                            //           decoration: BoxDecoration(
-                            //             color: Theme.of(context).accentColor,
-                            //             borderRadius:
-                            //                 BorderRadius.circular(10.0),
-                            //           ),
-                            //           alignment: Alignment.center,
-                            //           child: Text('fsfsf-3345'),
-                            //         ),
-                            //       )
-                            //     ],
-                            //   ),
-                            // ),
-                            Expanded(
-                              flex: 1,
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 3.0, top: 1.0),
-                                child: AutoSizeText(
-                                  'active - 423432',
-                                  style: TextStyle(color: Colors.orange[700]),
-                                  maxLines: 1,
-                                ),
-                              ),
+                            AutoSizeText(
+                              'Active : ' +
+                                  countryData[index]['active'].toString(),
+                              style: TextStyle(
+                                  color: Colors.indigo, fontSize: 16.0),
+                              maxLines: 1,
                             ),
-                            Expanded(
-                              flex: 1,
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 3.0),
-                                child: AutoSizeText(
-                                  'efef',
-                                  style: TextStyle(color: Colors.orange[700]),
-                                  maxLines: 1,
-                                ),
-                              ),
+                            AutoSizeText(
+                              'Deaths : ' +
+                                  countryData[index]['deaths'].toString(),
+                              style: TextStyle(
+                                  color: Colors.redAccent, fontSize: 16.0),
+                              maxLines: 1,
                             ),
-                            Expanded(
-                              flex: 1,
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 3.0),
-                                child: AutoSizeText(
-                                  'ewfwef',
-                                  style: TextStyle(color: Colors.brown),
-                                  maxLines: 1,
-                                ),
-                              ),
+                            AutoSizeText(
+                              'Recovered : ' +
+                                  countryData[index]['recovered'].toString(),
+                              style: TextStyle(
+                                  color: Colors.green, fontSize: 16.0),
+                              maxLines: 1,
                             ),
                           ],
                         ),
@@ -231,7 +114,8 @@ class _WorldWidePageState extends State<WorldWidePage> {
                         borderRadius: BorderRadius.circular(20.0),
                         child: FadeInImage.assetNetwork(
                           width: 120.0,
-                          placeholder: 'assets/images/loader.gif',
+                          placeholder:
+                              'assets/images/WorldWide_Page/loader.gif',
                           image: countryData[index]['countryInfo']['flag'],
                           fadeInCurve: Curves.bounceIn,
                           fit: BoxFit.cover,
@@ -241,8 +125,8 @@ class _WorldWidePageState extends State<WorldWidePage> {
                   ],
                 );
               },
-              itemCount: 5 //countryData == null ? 0 : countryData.length,
-              ),
+              itemCount: countryData == null ? 0 : countryData.length,
+            ),
     );
   }
 }

@@ -52,7 +52,10 @@ class _DashboardPageState extends State<DashboardPage> {
             child: Column(
               children: <Widget>[
                 worldData == null
-                    ? CircularProgressIndicator()
+                    ? Container(
+                        child: CircularProgressIndicator(),
+                        margin: EdgeInsets.all(16.0),
+                      )
                     : WorldCasesWidget.worldCasesWidget(worldData),
                 worldData == null
                     ? Container()
