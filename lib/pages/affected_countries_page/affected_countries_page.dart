@@ -27,38 +27,23 @@ class _AffectedCountriesPageState extends State<AffectedCountriesPage> {
 
   @override
   Widget build(BuildContext context) {
+    final double shortestSide = MediaQuery.of(context).size.shortestSide;
+    final bool useMobileLayout = shortestSide < 600.0;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Mostly Affected Countries'),
       ),
       body: countryData == null
           ? Center(child: CircularProgressIndicator())
-          : SingleChildScrollView(
-              child: Column(
-                children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      CountryWidget.countryWidget(countryData, 0),
-                      CountryWidget.countryWidget(countryData, 1)
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      CountryWidget.countryWidget(countryData, 2),
-                      CountryWidget.countryWidget(countryData, 3)
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      CountryWidget.countryWidget(countryData, 4),
-                      CountryWidget.countryWidget(countryData, 5)
-                    ],
-                  ),
-                ],
-              ),
+          : GridView.count(
+              crossAxisCount: useMobileLayout ? 2 : 3,
+              childAspectRatio: 1.0,
+              mainAxisSpacing: 4.0,
+              crossAxisSpacing: 4.0,
+              children: List.generate(6, (index) {
+                return CountryWidget.countryWidget(countryData, index);
+              }),
             ),
     );
   }

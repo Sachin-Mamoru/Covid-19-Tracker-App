@@ -56,84 +56,165 @@ class _DashboardPageState extends State<DashboardPage> {
                 worldData == null
                     ? Container()
                     : CasesPieChart.casesPieChart(worldData),
-                Column(
-                  children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        ServiceWidget.serviceWidget(
-                          'Symptoms',
-                          1,
-                          8.0,
-                          Colors.blueAccent,
-                          Colors.blueAccent,
-                          'assets/images/Dashboard/symptoms-logo.png',
-                          context,
-                          SymptomsPage(),
-                        ),
-                        ServiceWidget.serviceWidget(
-                          'Prevention',
-                          1,
-                          8.0,
-                          Colors.green,
-                          Colors.green,
-                          'assets/images/Dashboard/prevention-logo.png',
-                          context,
-                          PreventionPage(),
-                        )
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        ServiceWidget.serviceWidget(
-                          'Affected Countries',
-                          2,
-                          3.0,
-                          Colors.blueGrey,
-                          Colors.blueGrey,
-                          'assets/images/Dashboard/mostAffectCountry-logo.png',
-                          context,
-                          AffectedCountriesPage(),
-                        ),
-                        ServiceWidget.serviceWidget(
-                          'FAQs',
-                          1,
-                          5.0,
-                          Colors.black,
-                          Colors.white30,
-                          'assets/images/Dashboard/faqs-logo.jpg',
-                          context,
-                          FaqsPage(),
-                        )
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        ServiceWidget.serviceWidget(
-                          'Worldwide',
-                          1,
-                          8.0,
-                          Colors.teal,
-                          Colors.white,
-                          'assets/images/Dashboard/worldWide-logo.png',
-                          context,
-                          WorldWidePage(),
-                        ),
-                        ServiceWidget.serviceWidget(
-                          'Donation',
-                          1,
-                          8.0,
-                          Colors.indigoAccent,
-                          Colors.white60,
-                          'assets/images/Dashboard/donation-logo.jpg',
-                          context,
-                          PreventionPage(),
-                        )
-                      ],
-                    ),
-                  ],
+                LayoutBuilder(
+                  builder: (BuildContext context, BoxConstraints constraints) {
+                    if (constraints.maxWidth < 600.0) {
+                      return Column(
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              ServiceWidget.serviceWidget(
+                                'Symptoms',
+                                1,
+                                8.0,
+                                Colors.blueAccent,
+                                Colors.blueAccent,
+                                'assets/images/Dashboard/symptoms-logo.png',
+                                context,
+                                SymptomsPage(),
+                              ),
+                              ServiceWidget.serviceWidget(
+                                'Prevention',
+                                1,
+                                8.0,
+                                Colors.green,
+                                Colors.green,
+                                'assets/images/Dashboard/prevention-logo.png',
+                                context,
+                                PreventionPage(),
+                              )
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              ServiceWidget.serviceWidget(
+                                'Affected Countries',
+                                2,
+                                3.0,
+                                Colors.blueGrey,
+                                Colors.blueGrey,
+                                'assets/images/Dashboard/mostAffectCountry-logo.png',
+                                context,
+                                AffectedCountriesPage(),
+                              ),
+                              ServiceWidget.serviceWidget(
+                                'FAQs',
+                                1,
+                                5.0,
+                                Colors.black,
+                                Colors.white30,
+                                'assets/images/Dashboard/faqs-logo.jpg',
+                                context,
+                                FaqsPage(),
+                              )
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              ServiceWidget.serviceWidget(
+                                'Worldwide',
+                                1,
+                                8.0,
+                                Colors.teal,
+                                Colors.white,
+                                'assets/images/Dashboard/worldWide-logo.png',
+                                context,
+                                WorldWidePage(),
+                              ),
+                              ServiceWidget.serviceWidget(
+                                'Donation',
+                                1,
+                                8.0,
+                                Colors.indigoAccent,
+                                Colors.white60,
+                                'assets/images/Dashboard/donation-logo.jpg',
+                                context,
+                                PreventionPage(),
+                              )
+                            ],
+                          ),
+                        ],
+                      );
+                    } else {
+                      return Column(
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              ServiceWidget.serviceWidget(
+                                'Symptoms',
+                                1,
+                                8.0,
+                                Colors.blueAccent,
+                                Colors.blueAccent,
+                                'assets/images/Dashboard/symptoms-logo.png',
+                                context,
+                                SymptomsPage(),
+                              ),
+                              ServiceWidget.serviceWidget(
+                                'Prevention',
+                                1,
+                                8.0,
+                                Colors.green,
+                                Colors.green,
+                                'assets/images/Dashboard/prevention-logo.png',
+                                context,
+                                PreventionPage(),
+                              ),
+                              ServiceWidget.serviceWidget(
+                                'Affected Countries',
+                                2,
+                                3.0,
+                                Colors.blueGrey,
+                                Colors.blueGrey,
+                                'assets/images/Dashboard/mostAffectCountry-logo.png',
+                                context,
+                                AffectedCountriesPage(),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              ServiceWidget.serviceWidget(
+                                'FAQs',
+                                1,
+                                5.0,
+                                Colors.black,
+                                Colors.white30,
+                                'assets/images/Dashboard/faqs-logo.jpg',
+                                context,
+                                FaqsPage(),
+                              ),
+                              ServiceWidget.serviceWidget(
+                                'Worldwide',
+                                1,
+                                8.0,
+                                Colors.teal,
+                                Colors.white,
+                                'assets/images/Dashboard/worldWide-logo.png',
+                                context,
+                                WorldWidePage(),
+                              ),
+                              ServiceWidget.serviceWidget(
+                                'Donation',
+                                1,
+                                8.0,
+                                Colors.indigoAccent,
+                                Colors.white60,
+                                'assets/images/Dashboard/donation-logo.jpg',
+                                context,
+                                PreventionPage(),
+                              )
+                            ],
+                          ),
+                        ],
+                      );
+                    }
+                  },
                 ),
               ],
             ),

@@ -34,6 +34,9 @@ class SearchCountry extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
+    final double shortestSide = MediaQuery.of(context).size.shortestSide;
+    final bool useMobileLayout = shortestSide < 600.0;
+
     final suggestionList = query.isEmpty
         ? countryList
         : countryList
@@ -57,9 +60,15 @@ class SearchCountry extends SearchDelegate {
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.fromLTRB(118.0, 6.0, 20.0, 10.0),
+                  padding: EdgeInsets.fromLTRB(
+                      useMobileLayout ? 120.0 : shortestSide / 2 + 170.0,
+                      6.0,
+                      20.0,
+                      10.0),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: useMobileLayout
+                        ? MainAxisAlignment.start
+                        : MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       AutoSizeText(
@@ -101,13 +110,13 @@ class SearchCountry extends SearchDelegate {
                 ),
               ),
               Positioned(
-                left: 15.0,
+                left: useMobileLayout ? 15.0 : shortestSide / 2,
                 top: 15.0,
                 bottom: 15.0,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20.0),
                   child: FadeInImage.assetNetwork(
-                    width: 120.0,
+                    width: useMobileLayout ? 120.0 : 180.0,
                     placeholder: 'assets/images/WorldWide_Page/loader.gif',
                     image: suggestionList[index]['countryInfo']['flag'],
                     fadeInCurve: Curves.bounceIn,

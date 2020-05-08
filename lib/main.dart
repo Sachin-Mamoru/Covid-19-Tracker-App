@@ -60,60 +60,62 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Container(
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            image: _buildbackgroundImage(),
-          ),
-          padding: EdgeInsets.all(10.0),
-          child: SingleChildScrollView(
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Stack(
-                    alignment: Alignment.topCenter,
-                    children: <Widget>[
-                      Image(
-                        image: new AssetImage('assets/images/Cover/logo.png'),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 100.0,
-                  ),
-                  Stack(
-                    alignment: Alignment.bottomCenter,
-                    children: <Widget>[
-                      Image(
-                        image:
-                            new AssetImage('assets/images/Cover/get-start.png'),
-                      ),
-                      Positioned(
-                        top: 110.0,
-                        child: RaisedButton(
-                          padding: EdgeInsets.all(15.0),
-                          child: Text(
-                            'Get Started',
-                            style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20.0),
-                          ),
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => DashboardPage()));
-                          },
+      body: Container(
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          image: _buildbackgroundImage(),
+        ),
+        padding: EdgeInsets.all(10.0),
+        child: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Stack(
+                  alignment: Alignment.topCenter,
+                  children: <Widget>[
+                    Image(
+                      image: new AssetImage('assets/images/Cover/logo.png'),
+                      width: 600.0,
+                      height: 300.0,
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 100.0,
+                ),
+                Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: <Widget>[
+                    Image(
+                      image:
+                          new AssetImage('assets/images/Cover/get-start.png'),
+                      width: 600.0,
+                      height: 300.0,
+                    ),
+                    Positioned(
+                      top: 120.0,
+                      child: RaisedButton(
+                        padding: EdgeInsets.all(15.0),
+                        child: Text(
+                          'Get Started',
+                          style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20.0),
                         ),
-                      )
-                    ],
-                  )
-                ],
-              ),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DashboardPage()));
+                        },
+                      ),
+                    )
+                  ],
+                )
+              ],
             ),
           ),
         ),

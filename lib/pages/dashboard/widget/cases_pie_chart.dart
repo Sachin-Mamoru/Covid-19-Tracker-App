@@ -19,18 +19,19 @@ class CasesPieChart {
       ),
       child: PieChart(
         dataMap: {
-          'Infected': worldData['cases'].toDouble(),
+          // 'Infected': worldData['cases'].toDouble(),
           'Deaths': worldData['deaths'].toDouble(),
           'Recovered': worldData['recovered'].toDouble(),
           'Active': worldData['active'].toDouble()
         },
         colorList: [
-          Colors.brown,
+          // Colors.brown,
           Colors.redAccent,
           Colors.green,
           Colors.indigo
         ],
         chartType: ChartType.ring,
+        chartRadius: 300.0,
       ),
     );
   }
