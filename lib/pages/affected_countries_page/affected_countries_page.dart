@@ -38,9 +38,10 @@ class _AffectedCountriesPageState extends State<AffectedCountriesPage> {
           ? Center(child: CircularProgressIndicator())
           : GridView.count(
               crossAxisCount: useMobileLayout ? 2 : 3,
-              childAspectRatio: 1.0,
+              childAspectRatio: 0.8,
               mainAxisSpacing: 4.0,
               crossAxisSpacing: 4.0,
+              shrinkWrap: true,
               children: List.generate(6, (index) {
                 return CountryWidget.countryWidget(countryData, index);
               }),

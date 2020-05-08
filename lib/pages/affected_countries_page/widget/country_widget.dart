@@ -16,12 +16,15 @@ class CountryWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            FadeInImage.assetNetwork(
-              height: 45.0,
-              placeholder: 'assets/images/WorldWide_Page/loader.gif',
-              image: countryData[index]['countryInfo']['flag'],
-              fadeInCurve: Curves.bounceIn,
-              fit: BoxFit.cover,
+            Container(
+              padding: EdgeInsets.all(5.0),
+              child: FadeInImage.assetNetwork(
+                height: 45.0,
+                placeholder: 'assets/images/WorldWide_Page/loader.gif',
+                image: countryData[index]['countryInfo']['flag'],
+                fadeInCurve: Curves.bounceIn,
+                fit: BoxFit.cover,
+              ),
             ),
             SizedBox(
               height: 10.0,

@@ -4,40 +4,38 @@ import 'package:covid_19_tracker/pages/faqs_page/faqs_page.dart';
 import 'package:covid_19_tracker/pages/prevention_page/prevention_page.dart';
 import 'package:covid_19_tracker/pages/symptoms_page/symptoms_page.dart';
 import 'package:covid_19_tracker/pages/worldWide_page/worldWide_page.dart';
-import 'package:covid_19_tracker/services/covid19_data.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter/services.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context) => Covid19Data()),
-      ],
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.deepPurple,
-          buttonTheme: ButtonThemeData(
-            buttonColor: Colors.deepPurple,
-            textTheme: ButtonTextTheme.primary,
-          ),
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    return new MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+        buttonTheme: ButtonThemeData(
+          buttonColor: Colors.deepPurple,
+          textTheme: ButtonTextTheme.primary,
         ),
-        routes: <String, WidgetBuilder>{
-          '/dashboard': (BuildContext context) => new DashboardPage(),
-          '/prevention': (BuildContext context) => new PreventionPage(),
-          '/symptoms': (BuildContext context) => new SymptomsPage(),
-          '/affectedCountries': (BuildContext context) =>
-              new AffectedCountriesPage(),
-          '/worldWide': (BuildContext context) => new WorldWidePage(),
-          '/faqs': (BuildContext context) => new FaqsPage(),
-        },
-        debugShowCheckedModeBanner: false,
-        home: MyHomePage(),
       ),
+      routes: <String, WidgetBuilder>{
+        '/dashboard': (BuildContext context) => new DashboardPage(),
+        '/prevention': (BuildContext context) => new PreventionPage(),
+        '/symptoms': (BuildContext context) => new SymptomsPage(),
+        '/affectedCountries': (BuildContext context) =>
+            new AffectedCountriesPage(),
+        '/worldWide': (BuildContext context) => new WorldWidePage(),
+        '/faqs': (BuildContext context) => new FaqsPage(),
+      },
+      debugShowCheckedModeBanner: false,
+      home: MyHomePage(),
     );
   }
 }
@@ -59,6 +57,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final double shortestSideHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Container(
         alignment: Alignment.center,
@@ -75,10 +75,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 Stack(
                   alignment: Alignment.topCenter,
                   children: <Widget>[
-                    Image(
-                      image: new AssetImage('assets/images/Cover/logo.png'),
-                      width: 600.0,
-                      height: 300.0,
+                    ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxHeight: 300.0,
+                        maxWidth: 600.0,
+                      ),
+                      child: Image(
+                        image: new AssetImage('assets/images/Cover/logo.png'),
+                      ),
                     ),
                   ],
                 ),
@@ -88,14 +92,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 Stack(
                   alignment: Alignment.bottomCenter,
                   children: <Widget>[
-                    Image(
-                      image:
-                          new AssetImage('assets/images/Cover/get-start.png'),
-                      width: 600.0,
-                      height: 300.0,
+                    ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxHeight: 300.0,
+                        maxWidth: 600.0,
+                      ),
+                      child: Image(
+                        image:
+                            new AssetImage('assets/images/Cover/get-start.png'),
+                      ),
                     ),
-                    Positioned(
-                      top: 120.0,
+                    Container(
+                      margin: EdgeInsets.only(bottom: shortestSideHeight / 8),
                       child: RaisedButton(
                         padding: EdgeInsets.all(15.0),
                         child: Text(
