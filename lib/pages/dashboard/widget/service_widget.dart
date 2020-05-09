@@ -5,25 +5,26 @@ import 'package:flutter/material.dart';
 class ServiceWidget {
   static Widget serviceWidget(
       name, mxLines, bM, textColor, backgroundColor, img, context, page) {
-    return Container(
-      margin: EdgeInsets.all(13.0),
-      height: 170,
-      width: 150,
-      child: Stack(
-        alignment: Alignment.bottomCenter,
-        fit: StackFit.loose,
-        children: <Widget>[
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: new GestureDetector(
-              onTap: () {
-                if (name == 'Donation') {
-                  launch('https://covid19responsefund.org/');
-                } else {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => page));
-                }
-              },
+    final double shortestSideWidth = MediaQuery.of(context).size.width;
+    return new GestureDetector(
+      onTap: () {
+        if (name == 'Donation') {
+          launch('https://covid19responsefund.org/');
+        } else {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => page));
+        }
+      },
+      child: Container(
+        margin: EdgeInsets.all(13.0),
+        height: 170,
+        width: shortestSideWidth / 2.5,
+        child: Stack(
+          alignment: Alignment.bottomCenter,
+          fit: StackFit.loose,
+          children: <Widget>[
+            Align(
+              alignment: Alignment.bottomCenter,
               child: Material(
                 elevation: 5,
                 borderRadius: BorderRadius.circular(16),
@@ -50,26 +51,26 @@ class ServiceWidget {
                 ),
               ),
             ),
-          ),
-          Align(
-            alignment: Alignment.topCenter,
-            child: Material(
-              elevation: 4,
-              borderRadius: BorderRadius.circular(12),
-              color: backgroundColor,
-              child: Container(
-                padding: EdgeInsets.all(5.0),
-                height: 84,
-                width: 84,
-                child: Center(
-                  child: Image(
-                    image: new AssetImage(img),
+            Align(
+              alignment: Alignment.topCenter,
+              child: Material(
+                elevation: 4,
+                borderRadius: BorderRadius.circular(12),
+                color: backgroundColor,
+                child: Container(
+                  padding: EdgeInsets.all(5.0),
+                  height: 84,
+                  width: 84,
+                  child: Center(
+                    child: Image(
+                      image: new AssetImage(img),
+                    ),
                   ),
                 ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
