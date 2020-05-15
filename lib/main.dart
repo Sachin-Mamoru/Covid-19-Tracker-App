@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:covid_19_tracker/pages/affected_countries_page/affected_countries_page.dart';
 import 'package:covid_19_tracker/pages/dashboard/dashboard.dart';
 import 'package:covid_19_tracker/pages/faqs_page/faqs_page.dart';
@@ -12,10 +13,10 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
+    // SystemChrome.setPreferredOrientations([
+    //   DeviceOrientation.portraitUp,
+    //   DeviceOrientation.portraitDown,
+    // ]);
     return new MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -106,8 +107,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       margin: EdgeInsets.only(bottom: shortestSideHeight / 8),
                       child: RaisedButton(
                         padding: EdgeInsets.all(15.0),
-                        child: Text(
+                        child: AutoSizeText(
                           'Get Started',
+                          maxFontSize: 30,
                           style: TextStyle(
                               fontFamily: 'Poppins',
                               fontWeight: FontWeight.bold,

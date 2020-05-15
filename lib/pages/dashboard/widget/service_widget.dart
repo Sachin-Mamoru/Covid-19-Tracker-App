@@ -6,6 +6,7 @@ class ServiceWidget {
   static Widget serviceWidget(
       name, mxLines, bM, textColor, backgroundColor, img, context, page) {
     final double shortestSideWidth = MediaQuery.of(context).size.width;
+    final bool useMobileLayout = shortestSideWidth < 600.0;
     return new GestureDetector(
       onTap: () {
         if (name == 'Donation') {
@@ -18,7 +19,9 @@ class ServiceWidget {
       child: Container(
         margin: EdgeInsets.all(13.0),
         height: 170,
-        width: shortestSideWidth / 2.5,
+        width: useMobileLayout
+            ? shortestSideWidth / 2.5
+            : shortestSideWidth / 3.75,
         child: Stack(
           alignment: Alignment.bottomCenter,
           fit: StackFit.loose,

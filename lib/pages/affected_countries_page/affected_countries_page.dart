@@ -27,8 +27,8 @@ class _AffectedCountriesPageState extends State<AffectedCountriesPage> {
 
   @override
   Widget build(BuildContext context) {
-    final double shortestSide = MediaQuery.of(context).size.shortestSide;
-    final bool useMobileLayout = shortestSide < 600.0;
+    final double shortestSideWidth = MediaQuery.of(context).size.width;
+    final bool useMobileLayout = shortestSideWidth < 600.0;
 
     return Scaffold(
       appBar: AppBar(

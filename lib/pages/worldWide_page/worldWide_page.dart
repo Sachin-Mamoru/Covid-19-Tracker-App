@@ -28,8 +28,8 @@ class _WorldWidePageState extends State<WorldWidePage> {
 
   @override
   Widget build(BuildContext context) {
-    final double shortestSide = MediaQuery.of(context).size.shortestSide;
-    final bool useMobileLayout = shortestSide < 600.0;
+    final double shortestSideWidth = MediaQuery.of(context).size.width;
+    final bool useMobileLayout = shortestSideWidth < 600.0;
 
     return Scaffold(
       appBar: AppBar(
@@ -63,7 +63,7 @@ class _WorldWidePageState extends State<WorldWidePage> {
                       ),
                       child: Padding(
                         padding: EdgeInsets.fromLTRB(
-                            useMobileLayout ? 120.0 : shortestSide / 2 + 170.0,
+                            useMobileLayout ? 120.0 : shortestSideWidth / 2,
                             6.0,
                             20.0,
                             10.0),
@@ -116,7 +116,8 @@ class _WorldWidePageState extends State<WorldWidePage> {
                       ),
                     ),
                     Positioned(
-                      left: useMobileLayout ? 15.0 : shortestSide / 2,
+                      left:
+                          useMobileLayout ? 15.0 : shortestSideWidth / 2 - 180,
                       top: 15.0,
                       bottom: 15.0,
                       child: ClipRRect(

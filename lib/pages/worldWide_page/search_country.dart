@@ -34,8 +34,8 @@ class SearchCountry extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    final double shortestSide = MediaQuery.of(context).size.shortestSide;
-    final bool useMobileLayout = shortestSide < 600.0;
+    final double shortestSideWidth = MediaQuery.of(context).size.width;
+    final bool useMobileLayout = shortestSideWidth < 600.0;
 
     final suggestionList = query.isEmpty
         ? countryList
@@ -61,7 +61,7 @@ class SearchCountry extends SearchDelegate {
                 ),
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(
-                      useMobileLayout ? 120.0 : shortestSide / 2 + 170.0,
+                      useMobileLayout ? 120.0 : shortestSideWidth / 2,
                       6.0,
                       20.0,
                       10.0),
@@ -110,7 +110,7 @@ class SearchCountry extends SearchDelegate {
                 ),
               ),
               Positioned(
-                left: useMobileLayout ? 15.0 : shortestSide / 2,
+                left: useMobileLayout ? 15.0 : shortestSideWidth / 2 - 180,
                 top: 15.0,
                 bottom: 15.0,
                 child: ClipRRect(

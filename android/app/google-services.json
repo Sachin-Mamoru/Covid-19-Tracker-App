@@ -7,16 +7,16 @@
     },
     "client": [{
         "client_info": {
-            "mobilesdk_app_id": "1:875360802372:android:8db820fa4065d971bb4e11",
+            "mobilesdk_app_id": "1:875360802372:android:03b83e182ddae41abb4e11",
             "android_client_info": {
-                "package_name": "com.example.covid_19_tracker"
+                "package_name": "com.covid_19_tracker.TraCovid19"
             }
         },
         "oauth_client": [{
-                "client_id": "875360802372-n65720v16t5pecesgg9ao2h80lcgm2kd.apps.googleusercontent.com",
+                "client_id": "875360802372-1iqu3899mqvbf3htf3v9armjuf8vjoi2.apps.googleusercontent.com",
                 "client_type": 1,
                 "android_info": {
-                    "package_name": "com.example.covid_19_tracker",
+                    "package_name": "com.covid_19_tracker.TraCovid19",
                     "certificate_hash": "59c35665979584549a3931c827eb257e39b21ade"
                 }
             },

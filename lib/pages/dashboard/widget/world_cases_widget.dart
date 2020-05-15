@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class WorldCasesWidget {
   static Widget worldCasesWidget(worldData) {
     return Container(
-      margin: EdgeInsets.all(10.0),
+      margin: EdgeInsets.all(10),
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
@@ -20,20 +20,26 @@ class WorldCasesWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          caseResults(
-            Colors.brown,
-            worldData['cases'].toString(),
-            "Infected",
+          Expanded(
+            child: caseResults(
+              Colors.brown,
+              worldData['cases'].toString(),
+              "Infected",
+            ),
           ),
-          caseResults(
-            Colors.redAccent,
-            worldData['deaths'].toString(),
-            "Deaths",
+          Expanded(
+            child: caseResults(
+              Colors.redAccent,
+              worldData['deaths'].toString(),
+              "Deaths",
+            ),
           ),
-          caseResults(
-            Colors.green,
-            worldData['recovered'].toString(),
-            "Recovered",
+          Expanded(
+            child: caseResults(
+              Colors.green,
+              worldData['recovered'].toString(),
+              "Recovered",
+            ),
           ),
         ],
       ),
@@ -65,18 +71,16 @@ class WorldCasesWidget {
         SizedBox(height: 20),
         AutoSizeText(
           "$number",
-          minFontSize: 15,
-          style: TextStyle(
-            color: color,
-          ),
+          style: TextStyle(color: color, fontSize: 18),
           maxLines: 1,
         ),
         SizedBox(
           height: 10.0,
         ),
-        Text(
+        AutoSizeText(
           title,
           style: TextStyle(color: color, fontSize: 18),
+          maxLines: 1,
         ),
       ],
     );
