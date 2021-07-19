@@ -2,9 +2,9 @@
 
 A new Flutter project.
 
-images - https://pixabay.com/
-Data - https://www.who.int
-Covid-19 Api - https://corona.lmao.ninja/
+* images - https://pixabay.com/
+* Data - https://www.who.int
+* Covid-19 Api - https://corona.lmao.ninja/
 
 ## Getting Started
 
